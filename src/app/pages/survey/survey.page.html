@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nueva Encuesta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-input
+      placeholder="Nombre o alias"
+      [(ngModel)]="alias">
+    </ion-input>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Edad"
+      [(ngModel)]="edad">
+    </ion-input>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-select
+      placeholder="Rol"
+      [(ngModel)]="rol">
+
+      <ion-select-option value="Estudiante">
+        Estudiante
+      </ion-select-option>
+
+      <ion-select-option value="Docente">
+        Docente
+      </ion-select-option>
+
+      <ion-select-option value="Administrativo">
+        Administrativo
+      </ion-select-option>
+
+      <ion-select-option value="Visitante">
+        Visitante
+      </ion-select-option>
+
+    </ion-select>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-input
+      placeholder="Videojuego favorito"
+      [(ngModel)]="videojuego">
+    </ion-input>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-input
+      placeholder="Plataforma"
+      [(ngModel)]="plataforma">
+    </ion-input>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-input
+      placeholder="Género"
+      [(ngModel)]="genero">
+    </ion-input>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-textarea
+      placeholder="Comentario"
+      [(ngModel)]="comentario">
+    </ion-textarea>
+  </ion-item>
+
+  <br>
+
+  <ion-button expand="block" (click)="guardarEncuesta()">
+    Guardar encuesta
+  </ion-button>
+
+</ion-content>

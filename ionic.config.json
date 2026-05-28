@@ -1,0 +1,7 @@
+{
+  "name": "GameSurvey",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
