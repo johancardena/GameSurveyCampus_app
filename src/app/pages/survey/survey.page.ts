@@ -84,6 +84,9 @@ export class SurveyPage implements OnInit {
 
     try {
 
+      // Solicitar permisos primero
+      await Geolocation.requestPermissions();
+
       const coordinates =
         await Geolocation.getCurrentPosition();
 
@@ -93,14 +96,13 @@ export class SurveyPage implements OnInit {
       this.longitud =
         coordinates.coords.longitude;
 
-      console.log(this.latitud);
-      console.log(this.longitud);
+      console.log('Ubicación obtenida:', this.latitud, this.longitud);
 
     } catch (error) {
 
-      console.log(error);
+      console.error('Error obteniendo ubicación:', error);
 
-      alert('Error obteniendo ubicación');
+      alert('Error obteniendo ubicación. Verifica los permisos.');
 
     }
 
