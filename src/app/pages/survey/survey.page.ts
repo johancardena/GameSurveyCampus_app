@@ -120,7 +120,7 @@ export class SurveyPage implements OnInit {
 
         resultType: CameraResultType.Base64,
 
-        source: CameraSource.Photos
+        source: CameraSource.Prompt
 
       });
 
