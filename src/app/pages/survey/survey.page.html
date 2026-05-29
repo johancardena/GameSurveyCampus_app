@@ -6,6 +6,7 @@
 
 <ion-content class="ion-padding">
 
+  <!-- Alias -->
   <ion-item>
     <ion-input
       placeholder="Nombre o alias"
@@ -15,6 +16,7 @@
 
   <br>
 
+  <!-- Edad -->
   <ion-item>
     <ion-input
       type="number"
@@ -25,7 +27,9 @@
 
   <br>
 
+  <!-- Rol -->
   <ion-item>
+
     <ion-select
       placeholder="Rol"
       [(ngModel)]="rol">
@@ -47,10 +51,12 @@
       </ion-select-option>
 
     </ion-select>
+
   </ion-item>
 
   <br>
 
+  <!-- Juego -->
   <ion-item>
     <ion-input
       placeholder="Videojuego favorito"
@@ -60,6 +66,7 @@
 
   <br>
 
+  <!-- Plataforma -->
   <ion-item>
     <ion-input
       placeholder="Plataforma"
@@ -69,6 +76,7 @@
 
   <br>
 
+  <!-- Género -->
   <ion-item>
     <ion-input
       placeholder="Género"
@@ -78,6 +86,7 @@
 
   <br>
 
+  <!-- Comentario -->
   <ion-item>
     <ion-textarea
       placeholder="Comentario"
@@ -87,8 +96,39 @@
 
   <br>
 
-  <ion-button expand="block" (click)="guardarEncuesta()">
-    Guardar encuesta
+  <!-- GPS -->
+  <p><strong>Latitud:</strong> {{ latitud }}</p>
+
+  <p><strong>Longitud:</strong> {{ longitud }}</p>
+
+  <br>
+
+  <!-- Botón foto -->
+  <ion-button
+    expand="block"
+    (click)="tomarFoto()">
+
+    Tomar Foto
+
+  </ion-button>
+
+  <br>
+
+  <!-- Mostrar imagen -->
+  <img
+    *ngIf="foto"
+    [src]="foto"
+    width="100%">
+
+  <br><br>
+
+  <!-- Guardar -->
+  <ion-button
+    expand="block"
+    (click)="guardarEncuesta()">
+
+    Guardar Encuesta
+
   </ion-button>
 
 </ion-content>

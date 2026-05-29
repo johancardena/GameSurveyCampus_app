@@ -1,0 +1,68 @@
+ion-content {
+
+  --background:
+    linear-gradient(
+      180deg,
+      #020617,
+      #111827
+    );
+
+}
+
+.login-container {
+
+  padding: 30px;
+
+  margin-top: 100px;
+
+}
+
+h1 {
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 34px;
+
+  margin-bottom: 10px;
+
+}
+
+.subtitle {
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  margin-bottom: 40px;
+
+}
+
+ion-item {
+
+  --background: #1e293b;
+
+  border-radius: 15px;
+
+  margin-bottom: 15px;
+
+  color: white;
+
+}
+
+ion-input {
+
+  color: white;
+
+}
+
+ion-button {
+
+  margin-top: 20px;
+
+  height: 50px;
+
+  --border-radius: 15px;
+
+}

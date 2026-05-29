@@ -1,0 +1,58 @@
+ion-content {
+
+  --background:
+    linear-gradient(
+      180deg,
+      #020617,
+      #111827
+    );
+
+}
+
+.register-container {
+
+  padding: 30px;
+
+  margin-top: 80px;
+
+}
+
+h1 {
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 32px;
+
+  margin-bottom: 15px;
+
+}
+
+ion-item {
+
+  --background: #1e293b;
+
+  border-radius: 15px;
+
+  margin-bottom: 15px;
+
+  color: white;
+
+}
+
+ion-input {
+
+  color: white;
+
+}
+
+ion-button {
+
+  margin-top: 20px;
+
+  height: 50px;
+
+  --border-radius: 15px;
+
+}

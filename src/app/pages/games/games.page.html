@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Videojuegos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+
+    <ion-input
+      placeholder="Buscar videojuego"
+      [(ngModel)]="busqueda">
+
+    </ion-input>
+
+  </ion-item>
+
+  <br>
+
+  <ion-button
+    expand="block"
+    (click)="buscar()">
+
+    Buscar
+
+  </ion-button>
+
+  <br>
+
+  <ion-card *ngFor="let game of juegos">
+
+    <img [src]="game.background_image">
+
+    <ion-card-header>
+
+      <ion-card-title>
+        {{ game.name }}
+      </ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        <strong>Rating:</strong>
+        {{ game.rating }}
+      </p>
+
+      <p>
+        <strong>Fecha:</strong>
+        {{ game.released }}
+      </p>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

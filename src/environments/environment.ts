@@ -2,6 +2,7 @@ export const environment = {
   production: false,
 
   firebaseConfig: {
+    
     apiKey: "AIzaSyAU794RdTEq1nMKC7Wv5Qsi50gNCoMsPBM",
     authDomain: "gamesurveycampus.firebaseapp.com",
     projectId: "gamesurveycampus",

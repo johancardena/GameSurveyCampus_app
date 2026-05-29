@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
@@ -22,6 +22,14 @@ import {
   collection,
   addDoc
 } from '@angular/fire/firestore';
+
+import { Geolocation } from '@capacitor/geolocation';
+
+import {
+  Camera,
+  CameraResultType,
+  CameraSource
+} from '@capacitor/camera';
 
 @Component({
   selector: 'app-survey',
@@ -49,7 +57,7 @@ import {
 
 })
 
-export class SurveyPage {
+export class SurveyPage implements OnInit {
 
   alias = '';
   edad = '';
@@ -59,7 +67,75 @@ export class SurveyPage {
   genero = '';
   comentario = '';
 
+  latitud: number = 0;
+  longitud: number = 0;
+
+  foto: string = '';
+
   constructor(private firestore: Firestore) {}
+
+  async ngOnInit() {
+
+    await this.obtenerUbicacion();
+
+  }
+
+  async obtenerUbicacion() {
+
+    try {
+
+      const coordinates =
+        await Geolocation.getCurrentPosition();
+
+      this.latitud =
+        coordinates.coords.latitude;
+
+      this.longitud =
+        coordinates.coords.longitude;
+
+      console.log(this.latitud);
+      console.log(this.longitud);
+
+    } catch (error) {
+
+      console.log(error);
+
+      alert('Error obteniendo ubicación');
+
+    }
+
+  }
+
+  async tomarFoto() {
+
+    try {
+
+      const image = await Camera.getPhoto({
+
+        quality: 50,
+
+        allowEditing: false,
+
+        resultType: CameraResultType.Base64,
+
+        source: CameraSource.Photos
+
+      });
+
+      this.foto =
+        `data:image/jpeg;base64,${image.base64String}`;
+
+      console.log(this.foto);
+
+    } catch (error) {
+
+      console.log(error);
+
+      alert('Error al tomar foto');
+
+    }
+
+  }
 
   async guardarEncuesta() {
 
@@ -79,7 +155,13 @@ export class SurveyPage {
         plataforma: this.plataforma,
         genero: this.genero,
         comentario: this.comentario,
-        fecha: new Date()
+
+        latitud: this.latitud,
+        longitud: this.longitud,
+
+        foto: this.foto,
+
+        fecha: new Date().toLocaleDateString()
 
       });
 
@@ -92,6 +174,8 @@ export class SurveyPage {
       this.plataforma = '';
       this.genero = '';
       this.comentario = '';
+
+      this.foto = '';
 
     } catch (error) {
 

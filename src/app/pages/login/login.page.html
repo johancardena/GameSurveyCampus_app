@@ -1,44 +1,54 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Game Survey Campus</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content class="ion-padding">
+  <div class="login-container">
 
-  <h2>Iniciar sesión</h2>
+    <h1>🎮 GameSurvey</h1>
 
-  <ion-item>
-    <ion-input
-      type="email"
-      placeholder="Correo"
-      [(ngModel)]="email">
-    </ion-input>
-  </ion-item>
+    <p class="subtitle">
 
-  <br>
+      Inicia sesión para continuar
 
-  <ion-item>
-    <ion-input
-      type="password"
-      placeholder="Contraseña"
-      [(ngModel)]="password">
-    </ion-input>
-  </ion-item>
+    </p>
 
-  <br>
+    <ion-item>
 
-  <ion-button expand="block" (click)="login()">
-    Ingresar
-  </ion-button>
+      <ion-input
+        type="email"
+        placeholder="Correo"
+        [(ngModel)]="email">
 
-  <ion-button
-    expand="block"
-    fill="outline"
-    routerLink="/register">
+      </ion-input>
 
-    Crear cuenta
+    </ion-item>
 
-  </ion-button>
+    <ion-item>
+
+      <ion-input
+        type="password"
+        placeholder="Contraseña"
+        [(ngModel)]="password">
+
+      </ion-input>
+
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      (click)="login()">
+
+      Iniciar sesión
+
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      fill="outline"
+      routerLink="/register">
+
+      Crear cuenta
+
+    </ion-button>
+
+  </div>
 
 </ion-content>

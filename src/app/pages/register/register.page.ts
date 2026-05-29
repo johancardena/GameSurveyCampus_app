@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
+
 import {
   IonHeader,
   IonToolbar,
@@ -29,6 +31,7 @@ import {
   standalone: true,
 
   imports: [
+    CommonModule,
     IonHeader,
     IonToolbar,
     IonTitle,

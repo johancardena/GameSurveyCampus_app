@@ -30,7 +30,21 @@ export const routes: Routes = [
     path: 'survey',
     loadComponent: () =>
       import('./pages/survey/survey.page').then(m => m.SurveyPage)
+  },
+  {
+    path: 'games',
+    loadComponent: () => import('./pages/games/games.page').then( m => m.GamesPage)
+  },
+  {
+  path: 'posts',
+  loadComponent: () =>
+    import('./pages/posts/posts.page').then(m => m.PostsPage)
+},  {
+    path: 'posts',
+    loadComponent: () => import('./pages/posts/posts.page').then( m => m.PostsPage)
   }
+
+
 
 ];
 

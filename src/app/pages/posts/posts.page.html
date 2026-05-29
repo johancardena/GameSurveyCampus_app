@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Publicaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card *ngFor="let encuesta of encuestas">
+
+    <img
+      *ngIf="encuesta.foto"
+      [src]="encuesta.foto">
+
+    <ion-card-header>
+
+      <ion-card-title>
+
+        {{ encuesta.videojuego }}
+
+      </ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        <strong>Alias:</strong>
+        {{ encuesta.alias }}
+      </p>
+
+      <p>
+        <strong>Rol:</strong>
+        {{ encuesta.rol }}
+      </p>
+
+      <p>
+        <strong>Comentario:</strong>
+        {{ encuesta.comentario }}
+      </p>
+
+      <p>
+        <strong>Fecha:</strong>
+        {{ encuesta.fecha }}
+      </p>
+
+      <p>
+        <strong>Latitud:</strong>
+        {{ encuesta.latitud }}
+      </p>
+
+      <p>
+        <strong>Longitud:</strong>
+        {{ encuesta.longitud }}
+      </p>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

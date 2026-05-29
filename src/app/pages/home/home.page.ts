@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
+
 import {
   IonHeader,
   IonToolbar,
@@ -9,6 +10,13 @@ import {
   IonContent,
   IonButton
 } from '@ionic/angular/standalone';
+
+import { Router, RouterLink } from '@angular/router';
+
+import {
+  Auth,
+  signOut
+} from '@angular/fire/auth';
 
 @Component({
   selector: 'app-home',
@@ -25,9 +33,25 @@ import {
     IonToolbar,
     IonTitle,
     IonContent,
-    IonButton
+    IonButton,
+    RouterLink
   ]
 
 })
 
-export class HomePage {}
+export class HomePage {
+
+  constructor(
+    private auth: Auth,
+    private router: Router
+  ) {}
+
+  async logout() {
+
+    await signOut(this.auth);
+
+    this.router.navigate(['/login']);
+
+  }
+
+}
