@@ -9,12 +9,13 @@ import {
   IonContent,
   IonItem,
   IonInput,
-  IonButton
+  IonButton,
+  IonIcon
 } from '@ionic/angular/standalone';
 
 import { FormsModule } from '@angular/forms';
 
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import {
   Auth,
@@ -39,14 +40,18 @@ import {
     IonItem,
     IonInput,
     IonButton,
-    FormsModule
+    IonIcon,
+    FormsModule,
+    RouterLink
   ]
 })
 
 export class RegisterPage {
 
+  nombre = '';
   email = '';
   password = '';
+  confirmPassword = '';
 
   constructor(
     private auth: Auth,
@@ -57,13 +62,23 @@ export class RegisterPage {
 
     try {
 
+      if (this.password !== this.confirmPassword) {
+        alert('Las contraseñas no coinciden');
+        return;
+      }
+
+      if (this.password.length < 6) {
+        alert('La contraseña debe tener mínimo 6 caracteres');
+        return;
+      }
+
       await createUserWithEmailAndPassword(
         this.auth,
         this.email,
         this.password
       );
 
-      alert('Usuario creado');
+      alert('¡Cuenta creada exitosamente!');
 
       this.router.navigate(['/login']);
 
@@ -71,7 +86,7 @@ export class RegisterPage {
 
       console.log(error);
 
-      alert('Error al registrar');
+      alert('Error al registrar. Verifica el correo o intenta más tarde');
 
     }
 

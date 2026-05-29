@@ -7,7 +7,8 @@ import {
   IonContent,
   IonItem,
   IonInput,
-  IonButton
+  IonButton,
+  IonIcon
 } from '@ionic/angular/standalone';
 
 import { FormsModule } from '@angular/forms';
@@ -36,6 +37,7 @@ import {
     IonItem,
     IonInput,
     IonButton,
+    IonIcon,
     FormsModule,
     RouterLink
   ]

@@ -8,7 +8,8 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonButton
+  IonButton,
+  IonIcon
 } from '@ionic/angular/standalone';
 
 import { Router, RouterLink } from '@angular/router';
@@ -34,9 +35,9 @@ import {
     IonTitle,
     IonContent,
     IonButton,
+    IonIcon,
     RouterLink
   ]
-
 })
 
 export class HomePage {

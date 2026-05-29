@@ -1,49 +1,56 @@
 <ion-content class="home-content">
 
-  <div class="container">
+  <div class="home-wrapper">
 
-    <h1>🎮 GameSurvey Campus</h1>
+    <div class="header-section">
+      <div class="welcome-text">
+        <h1>🎮 GameSurvey</h1>
+        <p class="subtitle">Campus Gaming Community</p>
+      </div>
+    </div>
 
-    <p class="subtitle">
+    <div class="cards-container">
 
-      Comparte tus gustos gamer y descubre
-      publicaciones de la comunidad.
+      <div class="card-item survey-card">
+        <div class="card-icon">📝</div>
+        <h3>Nueva Encuesta</h3>
+        <p>Comparte tus gustos gaming y participa en nuestra comunidad</p>
+        <ion-button expand="block" shape="round" routerLink="/survey">
+          <ion-icon name="create-outline" slot="start"></ion-icon>
+          Crear
+        </ion-button>
+      </div>
 
-    </p>
+      <div class="card-item posts-card">
+        <div class="card-icon">📱</div>
+        <h3>Publicaciones</h3>
+        <p>Descubre qué dicen otros gamers sobre sus videojuegos favoritos</p>
+        <ion-button expand="block" shape="round" routerLink="/posts">
+          <ion-icon name="reader-outline" slot="start"></ion-icon>
+          Ver
+        </ion-button>
+      </div>
+
+      <div class="card-item games-card">
+        <div class="card-icon">🕹️</div>
+        <h3>Buscar Videojuegos</h3>
+        <p>Explora la base de datos de todos los juegos disponibles</p>
+        <ion-button expand="block" shape="round" routerLink="/games">
+          <ion-icon name="search-outline" slot="start"></ion-icon>
+          Buscar
+        </ion-button>
+      </div>
+
+    </div>
 
     <ion-button
       expand="block"
-      routerLink="/survey">
-
-      Nueva encuesta
-
-    </ion-button>
-
-    <ion-button
-      expand="block"
-      color="secondary"
-      routerLink="/posts">
-
-      Ver publicaciones
-
-    </ion-button>
-
-    <ion-button
-      expand="block"
-      color="tertiary"
-      routerLink="/games">
-
-      Buscar videojuegos
-
-    </ion-button>
-
-    <ion-button
-      expand="block"
-      color="danger"
+      shape="round"
+      fill="outline"
+      class="logout-button"
       (click)="logout()">
-
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
       Cerrar sesión
-
     </ion-button>
 
   </div>
