@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "846703350709",
+    "project_id": "gamesurveycampus",
+    "storage_bucket": "gamesurveycampus.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846703350709:android:f41aa5fe5e6f4d5501bffc",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846703350709-ej58kv0cci7stveit6f48vkdrl908pfl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBWA4rO0lscmujULLPgfKhutldvbscdm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846703350709-ej58kv0cci7stveit6f48vkdrl908pfl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
